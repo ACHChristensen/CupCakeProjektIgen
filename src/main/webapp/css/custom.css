@@ -1,0 +1,9 @@
+/* my styles go here */
+textcentercat{
+    color: white;
+    horiz-align: center;
+    font-weight: bold;
+    min-font-size: 150%;
+    font-size: 500%;
+    min-height: 500px;
+}
