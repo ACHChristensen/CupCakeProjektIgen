@@ -13,7 +13,7 @@
                 <img src="img/cupcakeIconWhite.png" alt="..." width="60"></a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link" href="${navbar.findUrl("login")}">Login /</a></li>
+                        <li class="nav-item"><a class="nav-link" href="${navbar.findUrl("Login")}">Login /</a></li>
                         <li class="nav-item"><a class="nav-link" href="${navbar.findUrl("")}">Cupcakes /</a> </li>
                         <li class="nav-item"><a class="nav-link" href="about">Om os /</a></li>
 

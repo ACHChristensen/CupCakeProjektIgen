@@ -10,6 +10,7 @@ import CupCakeProjekt.Backend.domain.Manufacturing.Cupcakes.Topping;
 import CupCakeProjekt.Backend.domain.Manufacturing.Orders.OrderLine;
 import CupCakeProjekt.Backend.domain.Repositories.CupCakeRepository;
 import CupCakeProjekt.Backend.domain.Repositories.OrderRepository;
+import CupCakeProjekt.Backend.domain.Repositories.UserRepository;
 import CupCakeProjekt.Backend.entries.Migrate;
 import org.apache.ibatis.jdbc.ScriptRunner;
 
@@ -17,7 +18,7 @@ import java.sql.DriverManager;
 import java.sql.*;
 
 
-public class Database implements OrderRepository, CupCakeRepository {
+public class Database implements OrderRepository, CupCakeRepository, UserRepository {
     private static CupCakeAppRepository api;
     //Database statement attribute
     private String sqlstatement;

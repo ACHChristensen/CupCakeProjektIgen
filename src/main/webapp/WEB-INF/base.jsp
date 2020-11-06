@@ -41,7 +41,7 @@
 
 <main role="main" class="container">
 
-
+    <jsp:include page="${requestScope.content}" flush="true"/>
 
         <div class="container ">
 

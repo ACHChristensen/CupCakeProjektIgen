@@ -13,11 +13,12 @@ public class Navbar {
 
     private static final Map<String, String> SITES = Map.of(
             "Index", "/",
-            "login", "/Login",
-            "About", "/aboutpage"
+            "Login", "/login",
+            "About", "/About"
     );
 
     public String findUrl(String name) {
+        System.out.println("HER ER VI :"+ SITES.get(name) + " " + name);
         return req.getContextPath() + SITES.get(name);
     }
 }

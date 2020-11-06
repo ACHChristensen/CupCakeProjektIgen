@@ -6,6 +6,7 @@ import CupCakeProjekt.Backend.domain.Manufacturing.Cupcakes.Topping;
 import CupCakeProjekt.Backend.domain.Manufacturing.Orders.OrderLine;
 import CupCakeProjekt.Backend.domain.Repositories.CupCakeRepository;
 import CupCakeProjekt.Backend.domain.Repositories.OrderRepository;
+import CupCakeProjekt.Backend.domain.Repositories.UserRepository;
 import CupCakeProjekt.Backend.infrastructure.Database;
 
 import java.util.ArrayList;
@@ -17,12 +18,14 @@ public class CupCakeAppRepository  {
     private final OrderRepository orderRepository;
     private final List<OrderLine> order = new ArrayList<>();
     private final OrderLine orderLine = null;
-    private static final int version = 1;
-    private static final Database db = null;
+    private final int version = 1;
+    private final UserRepository userRepository;
 
-    public CupCakeAppRepository(CupCakeRepository cupCakeRepository, OrderRepository orderRepository) {
+
+    public CupCakeAppRepository(CupCakeRepository cupCakeRepository, OrderRepository orderRepository, UserRepository userRepository) {
         this.cupCakeRepository = cupCakeRepository;
         this.orderRepository = orderRepository;
+        this.userRepository = userRepository;
     }
 
     public Topping createTop(String flavor){
@@ -49,7 +52,7 @@ public class CupCakeAppRepository  {
     //TODO public List<OrderLine> createOrder(List<OrderLine> orderlines) {
     //}
 
-    public static int getVersion() {
+    public int getVersion() {
         return version;
     }
 }

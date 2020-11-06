@@ -17,7 +17,7 @@ public class CupCakeApp {
 
         //Test
         Database db = new Database();
-        CupCakeAppRepository cupCakeApp = new CupCakeAppRepository(db,db);
+        CupCakeAppRepository cupCakeApp = new CupCakeAppRepository(db,db,db);
 
         String flavor = "Chocolate";
         Topping top = cupCakeApp.createTop(flavor);

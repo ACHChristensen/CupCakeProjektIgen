@@ -13,6 +13,14 @@ import java.time.LocalDateTime;
 
 public class BaseServlet extends HttpServlet {
 
+    protected static final CupCakeAppRepository api;
+    protected static final Database db;
+
+    static{
+        db = new Database();
+        api = new CupCakeAppRepository(db,db,db);
+    }
+
     protected void render(String title, String content, HttpServletRequest req, HttpServletResponse resp) throws
             ServletException, IOException {
         //resp.setContentType("text/html");
@@ -24,9 +32,8 @@ public class BaseServlet extends HttpServlet {
     }
 
     private static CupCakeAppRepository createCupCakeApp() throws IOException, SQLException {
-        Database db = new Database();
         db.runMigrations();
-        return new CupCakeAppRepository(db, db);
+        return new CupCakeAppRepository(db, db, db);
     }
 
     protected void setup(HttpServletRequest req, HttpServletResponse resp) throws IOException {
