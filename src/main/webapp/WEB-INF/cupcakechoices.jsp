@@ -6,7 +6,9 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div>
-    <textcentercat>Vælg topping og bund
+    <textcentercat>
+        <p> 🧁 </p>
+        Vælg topping og bund
     <h1 textcenter="center"> - samt ønskede antal dejlige cupcakes ! </h1></textcentercat>
 
 </div>

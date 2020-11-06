@@ -1,7 +1,7 @@
 package CupCakeProjekt.web;
 import CupCakeProjekt.Backend.api.CupCakeAppRepository;
 import CupCakeProjekt.Backend.infrastructure.Database;
-import CupCakeProjekt.web.pages.Navbar;
+import CupCakeProjekt.web.widget.Navbar;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -18,9 +18,9 @@ public class BaseServlet extends HttpServlet {
         //resp.setContentType("text/html");
         //resp.getWriter().println("<h1>Hello, World</h1>");
         req.setAttribute("navbar", new Navbar(req));
-        req.getRequestDispatcher("/WEB-INF/base.jsp").forward(req,resp);
-        req.setAttribute("title",content);
+        req.setAttribute("title",title);
         req.setAttribute("content",content);
+        req.getRequestDispatcher("/WEB-INF/base.jsp").forward(req,resp);
     }
 
     private static CupCakeAppRepository createCupCakeApp() throws IOException, SQLException {

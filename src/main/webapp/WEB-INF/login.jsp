@@ -4,7 +4,7 @@
   Date: 06-11-2020
   Time: 00:58
 --%>
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <form name="login" method="post">
     <input type="hidden" name="target" value="login"/>
 

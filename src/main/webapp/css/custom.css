@@ -6,10 +6,19 @@ textcentercatversion{
     font-size:8vw;
 }
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
-    height: 300px;
-    line-height: 60px;
-    background-color: rebeccapurple;
+    height:30%;
+    background-color: rgb(60,20,96);
 }
+
+body {
+    background: rgb(60,20,96);
+    background-image: url("../img/cupcakebackground.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position: top;
+    height: 71%;
+}
+

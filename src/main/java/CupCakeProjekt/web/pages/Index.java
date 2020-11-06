@@ -20,6 +20,7 @@ public class Index extends BaseServlet {
             ServletException, IOException {
 
         req.getSession().setAttribute("name", "Gæst");
+        req.getSession().setAttribute("quanitity", ""+0);
         req.getSession().setAttribute("version", ""+ api.getVersion());
         render("Olsker Cupcakes","/WEB-INF/index.jsp", req,resp);
 
