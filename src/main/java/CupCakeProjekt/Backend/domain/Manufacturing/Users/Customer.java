@@ -1,21 +1,18 @@
 package CupCakeProjekt.Backend.domain.Manufacturing.Users;
 
-import CupCakeProjekt.Backend.domain.Manufacturing.Orders.OrderLine;
-import java.util.ArrayList;
+import CupCakeProjekt.Backend.domain.Manufacturing.Orders.Order;
+
 import java.util.List;
 
-public class Customer {
+public class Customer extends User{
     //TODO
-    //private List<List<OrderLine>> orderHistory;
+    private List<Order> orderHistory;
 
-    private final String name;
-
-    //TODO attributer til en forældre klasse med navn User?
+    private String name;
     private String password;
     private String email;
 
-    public Customer(String name) {
-        this.name = name;
-        //TODO skal den arve fra user?
+    protected Customer(String name, String email, String password) {
+        super(name, true, password, email);
     }
 }

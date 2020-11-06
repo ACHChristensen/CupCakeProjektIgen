@@ -1,9 +1,15 @@
 /* my styles go here */
-textcentercat{
+textcentercatversion{
     color: white;
     horiz-align: center;
     font-weight: bold;
-    min-font-size: 150%;
-    font-size: 500%;
-    min-height: 500px;
+    font-size:8vw;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    line-height: 60px;
+    background-color: rebeccapurple;
 }

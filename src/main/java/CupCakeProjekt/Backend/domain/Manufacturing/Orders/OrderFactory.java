@@ -11,13 +11,9 @@ public interface OrderFactory {
     /*List<OrderLine> order = new ArrayList<>();
     OrderLine orderLine = null;*/
 
-    private static void addToOrder (CupCake cupCake, int quanitity){
-        /*OrderLine orderLine = new OrderLine(cupCake, quanitity);
-        order.add(orderLine);*/
+    private static void addAsOrderLine (CupCake cupCake, int quanitity){
+        OrderLine orderLine = new OrderLine(cupCake, quanitity);
     }
 
-    //TODO
-    private static List<OrderLine> createOrder(ArrayList<OrderLine> orderLines) {
-        return null;
-    }
+
 }
