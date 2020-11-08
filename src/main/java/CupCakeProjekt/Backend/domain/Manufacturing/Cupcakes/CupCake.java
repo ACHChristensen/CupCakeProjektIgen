@@ -16,7 +16,7 @@ public class CupCake {
         return topping.getPrice() + bottom.getPrice();
     }
 
-    public double getPrice() {
+    public final double getPrice() {
         return price;
     }
 }

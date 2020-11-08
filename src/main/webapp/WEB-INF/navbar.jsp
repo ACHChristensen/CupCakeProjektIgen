@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Cathrine
@@ -14,8 +15,8 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link" href="${navbar.findUrl("Login")}">Login /</a></li>
-                        <li class="nav-item"><a class="nav-link" href="${navbar.findUrl("")}">Cupcakes /</a> </li>
-                        <li class="nav-item"><a class="nav-link" href="about">Om os /</a></li>
+                        <li class="nav-item"><a class="nav-link" href="${navbar.findUrl("Cupcakes")}">Cupcakes /</a> </li>
+                        <li class="nav-item"><a class="nav-link" href="${navbar.findUrl("About")}">Om os /</a></li>
 
                     </ul>
                     <ul center class="navbar-nav d-none d-lg-block px-4">
@@ -24,9 +25,9 @@
                                 width="80"></a></li>
                     </ul>
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item"><a class="nav-link" href="Contact"> Kontakt /</a></li>
-                        <li class="nav-item"><a class="nav-link" href="Cart">Indkøbskurv ( ${sessionScope.quanitity} ) /</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="User">${sessionScope.name}
+                        <li class="nav-item"><a class="nav-link" href="${navbar.findUrl("Contact")}"> Kontakt /</a></li>
+                        <li class="nav-item"><a class="nav-link" href="${navbar.findUrl("Cart")}">Indkøbskurv ( ${sessionScope.quanitity} ) /</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="${navbar.findUrl("User")}">${sessionScope.name}
                         </a>
                         </li>
                     </ul>

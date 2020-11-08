@@ -9,7 +9,7 @@ public class Order {
     private OrderLine orderLine;
 
 
-    public Order(OrderLine orderline) {
+    protected Order(OrderLine orderline) {
         this.order = new ArrayList<>();
         this.orderLine = orderline;
     }

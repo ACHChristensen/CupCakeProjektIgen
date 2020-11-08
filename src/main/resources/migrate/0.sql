@@ -1,20 +1,34 @@
-insert into cupcakedb.toppings (flavor, price)
-Values ('Chocolate', 5.00),
-       ('Blueberry', 5.00),
-       ('Rasberry', 5.00),
-       ('Crispy', 6.00),
-       ('Strawberry', 6.00),
-       ('Rum/Raisin', 7.00),
-       ('Orange', 8.00),
-       ('Lemon', 8.00),
-       ('Blue cheese', 9.00);
+drop database if exists CupCakeDB;
+drop user if exists 'Employee'@'localhost';
 
-insert into cupcakedb.bottoms (flavor, price)
-Values ('Chocolate', 5.00),
-       ('Vanilla', 5.00),
-       ('Nutmeg', 5.00),
-       ('Pistacio', 6.00),
-       ('Almond', 7.00);
+create database CupCakeDB;
 
+create user 'Employee'@'localhost';
+
+grant DROP, CREATE, INSERT, SELECT, UPDATE on CupCakeDB.* to 'Employee'@'localhost';
+
+DROP TABLE IF EXISTS CupcakeDB.bottoms;
+create table CupCakeDB.toppings
+(
+    id     int primary key auto_increment,
+    flavor varchar(50) not null,
+    price  double      not null
+);
+DROP TABLE IF EXISTS CupcakeDB.bottoms;
+create table CupcakeDB.bottoms
+(
+    id     int primary key auto_increment,
+    flavor varchar(50) not null,
+    price  double      not null
+);
+
+DROP TABLE IF EXISTS cupcakedb.properties;
+create table cupcakedb.properties
+(
+    name          VARCHAR(255) PRIMARY KEY,
+    numberversion VARCHAR(255)
+);
 
 INSERT INTO cupcakedb.properties (name, numberversion) values ('version', '0');
+
+

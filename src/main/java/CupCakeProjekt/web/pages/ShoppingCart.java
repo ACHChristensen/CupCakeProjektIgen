@@ -1,10 +1,4 @@
 package CupCakeProjekt.web.pages;
-
-import CupCakeProjekt.Backend.domain.Manufacturing.Orders.Order;
-import CupCakeProjekt.Backend.domain.Manufacturing.Cupcakes.Bottom;
-import CupCakeProjekt.Backend.domain.Manufacturing.Cupcakes.CupCake;
-import CupCakeProjekt.Backend.domain.Manufacturing.Cupcakes.Topping;
-import CupCakeProjekt.Backend.domain.Manufacturing.Orders.OrderLine;
 import CupCakeProjekt.web.BaseServlet;
 
 import javax.servlet.ServletException;

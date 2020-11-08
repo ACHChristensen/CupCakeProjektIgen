@@ -5,12 +5,12 @@
   Time: 00:58
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<form name="login" method="post">
+<form name="login" action="${sessionScope.content}" method="post">
     <input type="hidden" name="target" value="login"/>
 
     <div class="form-group">
         <label for="email">Indtast din email:</label>
-        <input type="text" name="email" class="form-control tr2" id="email" placeholder="Skriv e-mail her">
+        <input type="text" name="email" class="form-control tr2" id="email" aria-describedby="emailHelp" placeholder="Skriv e-mail her">
     </div>
     <div class="form-group">
         <label for="password">Indtast dit kodeord:</label>

@@ -12,7 +12,16 @@ public class Customer extends User{
     private String password;
     private String email;
 
-    protected Customer(String name, String email, String password) {
+    public Customer(String name, String email, String password) {
         super(name, true, password, email);
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
     }
 }

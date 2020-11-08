@@ -61,12 +61,12 @@
                         <h5 class="mb-4 mt-3">Åbningstider</h5>
                         <ul class="list-unstyled">
                             <li class="mb-2">
-                                <h6 class="mb-1"><a class="reset-anchor text-primary">I hverdagene - Mandag til
+                                <h6 class="mb-1"><a class="reset-anchor text-primary">Mandag til
                                     fredag</a></h6>
                                 <p class=" text-small text-fancy mb-0">Kl. 08:00 - 17.00</p>
                             </li>
                             <li class="mb-2">
-                                <h6 class="mb-1"><a class="reset-anchor text-primary">I weekenderne - Lørdage</a></h6>
+                                <h6 class="mb-1"><a class="reset-anchor text-primary">Lørdage</a></h6>
                                 <p class=" text-small text-fancy mb-0">Kl. 10:00 - 14:00</p>
                             </li>
                             <li class="mb-3">

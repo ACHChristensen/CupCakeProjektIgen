@@ -4,8 +4,8 @@ import CupCakeProjekt.Backend.domain.Manufacturing.Cupcakes.CupCake;
 
 
 public class OrderLine {
-    CupCake cupCake;
-    int quanitity;
+    private final CupCake cupCake;
+    private final int quanitity;
     private double price;
     private final String orderedTime;
     private String pickUpTime;

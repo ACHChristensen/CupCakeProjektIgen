@@ -1,5 +1,6 @@
 package CupCakeProjekt.web;
 import CupCakeProjekt.Backend.api.CupCakeAppRepository;
+import CupCakeProjekt.Backend.entries.Migrate;
 import CupCakeProjekt.Backend.infrastructure.Database;
 import CupCakeProjekt.web.widget.Navbar;
 
@@ -32,7 +33,7 @@ public class BaseServlet extends HttpServlet {
     }
 
     private static CupCakeAppRepository createCupCakeApp() throws IOException, SQLException {
-        db.runMigrations();
+        Migrate.runMigrations();
         return new CupCakeAppRepository(db, db, db);
     }
 

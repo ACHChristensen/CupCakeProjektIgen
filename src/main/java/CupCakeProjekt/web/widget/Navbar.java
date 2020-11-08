@@ -14,7 +14,11 @@ public class Navbar {
     private static final Map<String, String> SITES = Map.of(
             "Index", "/",
             "Login", "/login",
-            "About", "/About"
+            "About", "/About",
+            "Contact", "/contact",
+            "Cart", "/ShoppingCart",
+            "CupCakes", "/cupcakes",
+            "User", "/user"
     );
 
     public String findUrl(String name) {

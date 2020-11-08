@@ -6,8 +6,10 @@ import CupCakeProjekt.Backend.domain.Manufacturing.Cupcakes.CupCake;
 import CupCakeProjekt.Backend.domain.Manufacturing.Cupcakes.Topping;
 import CupCakeProjekt.Backend.domain.Manufacturing.Orders.OrderLine;
 import CupCakeProjekt.Backend.infrastructure.Database;
+import CupCakeProjekt.web.BaseServlet;
 
 import javax.persistence.criteria.Order;
+import javax.servlet.Servlet;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +17,7 @@ public class CupCakeApp {
 
     public static void main(String[] args) {
 
-        //Test
+        /*//Test
         Database db = new Database();
         CupCakeAppRepository cupCakeApp = new CupCakeAppRepository(db,db,db);
 
@@ -31,9 +33,7 @@ public class CupCakeApp {
 
         //TODO List<OrderLine> order = cupCakeApp.createOrder();
         //order.add(new OrderLine(cupCake,4));
-        //order.add(new OrderLine(cupCake1, 9));
-
-
+        //order.add(new OrderLine(cupCake1, 9));*/
 
     }
 }

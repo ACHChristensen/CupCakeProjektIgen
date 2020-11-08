@@ -6,8 +6,13 @@ public class Employee extends User{
 
     private HashSet<Customer> customersForTheShop;
 
-    protected Employee(String name, Boolean kundeLogin, String password, String email) {
+    Employee(String name, String password, String email) {
         super(name, false, password, email);
         customersForTheShop = new HashSet<>();
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
     }
 }

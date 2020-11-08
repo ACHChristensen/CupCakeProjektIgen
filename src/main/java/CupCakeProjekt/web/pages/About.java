@@ -1,5 +1,6 @@
 package CupCakeProjekt.web.pages;
 
+import CupCakeProjekt.Backend.infrastructure.Database;
 import CupCakeProjekt.web.BaseServlet;
 
 import javax.servlet.ServletException;
@@ -14,10 +15,7 @@ public class About extends BaseServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws
             ServletException, IOException {
 
-        req.getSession().setAttribute("name", "Gæst");
-        req.getSession().setAttribute("quanitity", ""+0);
-        req.getSession().setAttribute("version", ""+ api.getVersion());
-        render("Olsker Cupcakes","/WEB-INF/index.jsp", req,resp);
+        render("Olsker Cupcakes","/WEB-INF/about.jsp", req,resp);
 
     }
 }
