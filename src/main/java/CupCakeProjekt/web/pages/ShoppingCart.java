@@ -1,4 +1,5 @@
 package CupCakeProjekt.web.pages;
+import CupCakeProjekt.Backend.domain.Manufacturing.Orders.OrderLine;
 import CupCakeProjekt.web.BaseServlet;
 
 import javax.servlet.ServletException;
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.swing.text.html.parser.Parser;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 @WebServlet("/ShoppingCart")
 public class ShoppingCart extends BaseServlet {
@@ -16,28 +18,27 @@ public class ShoppingCart extends BaseServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws
             ServletException, IOException {
-        if (req.getPathInfo() == null) {
+        if (!(((String)req.getSession().getAttribute("order")) == null)){
+        ArrayList<OrderLine> order= (ArrayList<OrderLine>) req.getSession().getAttribute("order");
+        //if (!(order.isEmpty()))
+        req.getSession().setAttribute("orderinchart", api.createOrder(order));}
+        //int quanitity = Integer.parseInt((String) req.getServletContext().getAttribute("quanitity"));
+        //if (req.getPathInfo() == null) {
             render("Olsker Cupcakes - ShoppingKurv", "/WEB-INF/choosedcart.jsp", req, resp);
-        } else {
-            int shoppingCartId = Integer.parseInt(req.getPathInfo().substring(1));
-            log(req,"Accessing Shopping Cart " + req.getPathInfo() + ": "+ shoppingCartId);
-        }
+        //} else {
+        //    int shoppingCartId = Integer.parseInt(req.getPathInfo().substring(1));
+        //    log(req,"Accessing Shopping Cart " + req.getPathInfo() + ": "+ shoppingCartId);
+        //}
     }
 
     @Override
-    protected void doPost(HttpServletRequest rq, HttpServletResponse resp) {
-        String topFlavor = rq.getParameter("topping");
-        String botFlavor = rq.getParameter("bottom");
-        int quanitity = Integer.parseInt(rq.getParameter("quanitity"));
-        if (!(quanitity > 0))
-            throw new IllegalArgumentException("Dette er ikke et gyldigt tal, prøv igen");
-        try {
-            super.doPost(rq, resp);
-        } catch (ServletException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+    protected void doPost(HttpServletRequest rq, HttpServletResponse resp) throws IOException {
+        rq.getSession().setAttribute("orderinchart", null);
+        if (((String) rq.getSession().getAttribute("loggedin")) == null) {
+            resp.sendRedirect(rq.getContextPath() + "/login");
+        } else {
+            rq.getSession().setAttribute("quanitity", null);
+            resp.sendRedirect(rq.getContextPath() + "/orderconfirmation");
         }
     }
-
 }

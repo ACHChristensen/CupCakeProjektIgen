@@ -13,10 +13,17 @@ public class CupCake {
          }
 
     public double priceCalculated(){
-        return topping.getPrice() + bottom.getPrice();
+        double tmpPrice = topping.getPrice() + bottom.getPrice();
+        return tmpPrice;
     }
 
     public final double getPrice() {
         return price;
+    }
+
+    @Override
+    public String toString() {
+        return " bund: " + bottom +
+                "+ topping: " + topping;
     }
 }

@@ -3,6 +3,7 @@ package CupCakeProjekt.Backend.api;
 import CupCakeProjekt.Backend.domain.Manufacturing.Cupcakes.Bottom;
 import CupCakeProjekt.Backend.domain.Manufacturing.Cupcakes.CupCake;
 import CupCakeProjekt.Backend.domain.Manufacturing.Cupcakes.Topping;
+import CupCakeProjekt.Backend.domain.Manufacturing.Orders.Order;
 import CupCakeProjekt.Backend.domain.Manufacturing.Orders.OrderFactory;
 import CupCakeProjekt.Backend.domain.Manufacturing.Orders.OrderLine;
 import CupCakeProjekt.Backend.domain.Manufacturing.Users.Customer;
@@ -18,11 +19,9 @@ import java.util.List;
 
 public class CupCakeAppRepository  {
 
-    private final CupCakeRepository cupCakeRepository;
+    private  final CupCakeRepository cupCakeRepository;
     private final OrderRepository orderRepository;
-    private final List<OrderLine> order = new ArrayList<>();
-    private final OrderLine orderLine = null;
-    private static final int version = 2;
+    private static final List<OrderLine> order = new ArrayList<>();
     private final UserRepository userRepository;
 
 
@@ -37,9 +36,19 @@ public class CupCakeAppRepository  {
         return top;
     }
 
+    static List<Topping> showToppingsChoices(){
+        List<Topping> toppings = CupCakeRepository.showToppings();
+        return toppings;
+    }
+
     public Bottom createBottom(String flavor) {
         Bottom bottom = cupCakeRepository.createBottom(flavor);
         return bottom;
+    }
+
+    public List<Bottom> showBottomsChoices(){
+        List<Bottom> bottoms = CupCakeRepository.showBottoms();
+        return bottoms;
     }
 
     public CupCake createCupcake(Topping top, Bottom bot) {
@@ -53,12 +62,13 @@ public class CupCakeAppRepository  {
         order.add(orderLine);
     }
 
-    //TODO public List<OrderLine> createOrder(List<OrderLine> orderlines) {
-    //}
+    public Order createOrder(List<OrderLine> orderlines) {
+        return new Order(orderlines);
+    }
 
-    public User createUser(String name, String email, String password){
-        User user = UserRepository.createUser(name, email, password);
-        return user;
+    public Customer createCustomer(String name, String email, String password){
+        System.out.println("VI er er " + name + email + password);
+        return UserRepository.createNewCustomer(name, email, password);
     }
 
      public User findUser(User user) throws UserNotFoundException {
@@ -73,6 +83,10 @@ public class CupCakeAppRepository  {
         Customer customer = (Customer) user;
         customer.setName(actualName);
         return customer;
+    }
+
+    public List<OrderLine> getOrderFromAPI(){
+        return order;
     }
 
 }

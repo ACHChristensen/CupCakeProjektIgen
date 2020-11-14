@@ -1,7 +1,7 @@
 package CupCakeProjekt.Backend.domain.Manufacturing.Users;
 
 public class User{
-    private final String name;
+    private String name;
     private final Boolean CustommerRole;
     protected String password;
     private String email;
@@ -36,5 +36,9 @@ public class User{
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

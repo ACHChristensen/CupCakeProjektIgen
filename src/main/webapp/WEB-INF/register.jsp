@@ -6,13 +6,19 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<H2>Du er ikke oprettet i systemet - endnu!</h2>
-<H3>Ønsker du at oprette dig, så udfyld nedenunder</H3>
-<div class="form-group">
-    <label for="firstname">Indtast dit fornavn:</label>
-    <input type="text" name="firstname" class="form-control tr2" id="firstname" placeholder="Skriv fornavn her">
-    <button type="submit" class="btn btn-light mt-3">Opret bruger</button>
+<br>
+<div class="text-center">
+    <H2 style="color: white">Du er ikke oprettet i systemet - endnu!</h2>
+    <H3 style="color:rgb(188,50,96)">Ønsker du at oprette dig, så udfyld nedenunder</H3>
 </div>
-<div class="text-center mt-3">
-    <a class="btn btn-outline-light" href="/Login" role="button">Tilbage til login</a>
-</div>
+<br>
+<form name="Register" id="firstname" action="${Register}" method="Post">
+    <input type="hidden" name="target" value="Register">
+    <div class="form-group">
+        <label for="firstname">Indtast dit navn:</label>
+        <input type="text" name="firstname" class="form-control tr2" id="firstname1" placeholder="Skriv fornavn her">
+        <div class="text-center mt-3">
+            <button type="submit" class="btn btn-light mt-3">Opret bruger</button>
+        </div>
+    </div>
+</form>

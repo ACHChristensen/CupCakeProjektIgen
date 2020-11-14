@@ -14,11 +14,13 @@ import CupCakeProjekt.Backend.domain.Repositories.UserRepository;
 
 import java.sql.DriverManager;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Database implements OrderRepository, CupCakeRepository, UserRepository {
 
     //Database statement attribute
-    private String sqlstatement;
+    private static String sqlstatement;
 
     // Database URL
     private static final String DB_URL = "jdbc:mysql://localhost/cupcakedb?useSSL=false&serverTimezone=UTC";
@@ -77,6 +79,27 @@ public class Database implements OrderRepository, CupCakeRepository, UserReposit
         return new Topping(flavor, price);
     }
 
+    //TODO - OVerrride notian problem
+    public List<Topping> showToppingsChoice() {
+        double price = -1.0; //TODO Bedre default ? Lav validering
+        List<Topping> toppings = new ArrayList();
+        String flavor;
+        sqlstatement = "SELECT * FROM cupcakedb.toppings";
+
+        try (Connection conn = getConnection()) {
+            PreparedStatement ps = conn.prepareStatement(sqlstatement);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                flavor = rs.getString("flavor");
+                price = rs.getDouble("price");
+                Topping tmpTop = new Topping(flavor, price);
+                toppings.add(tmpTop);
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            System.err.println(e.getMessage());
+        }
+        return toppings;
+    }
 
     @Override
     public Bottom createBottom(String flavor) {
@@ -98,6 +121,28 @@ public class Database implements OrderRepository, CupCakeRepository, UserReposit
         return new Bottom(flavor, price);
     }
 
+    //TODO - OVerrride notian problem
+    public List<Bottom> showBottomsChoice() {
+        double price = -1.0; //TODO Bedre default ? Lav validering
+        List<Bottom> bottoms = new ArrayList();
+        String flavor;
+        sqlstatement = "SELECT * FROM cupcakedb.bottoms";
+
+        try (Connection conn = getConnection()) {
+            PreparedStatement ps = conn.prepareStatement(sqlstatement);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                flavor = rs.getString("flavor");
+                price = rs.getDouble("price");
+                Bottom tmpBot = new Bottom(flavor, price);
+                bottoms.add(tmpBot);
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            System.err.println(e.getMessage());
+        }
+        return bottoms;
+    }
+
     //TODO - shouldn't be here
     @Override
     public CupCake createCupCake(Topping top, Bottom bot) {
@@ -113,29 +158,35 @@ public class Database implements OrderRepository, CupCakeRepository, UserReposit
     }
 
     //TODO - OVerrride notian problem
-    public User findUser(User user) {
-        String userIdentifierByEmail = user.getEmail();
+    public boolean compareUsers(String email) {
         sqlstatement = "SELECT users.name FROM cupcakedb.users WHERE users.email = ?;";
-        String nameStoraged = null;
         try (Connection conn = getConnection()) {
             PreparedStatement ps = conn.prepareStatement(sqlstatement);
-            ps.setString(1, userIdentifierByEmail);
-
+            ps.setString(1, email);
             ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
-                nameStoraged = rs.getString("name");
-            }
-            if (!(nameStoraged == user.getName())) {
-                //TODO throw new UserNotFoundException(user);
-                return null;
-            }
-            return user;
+            if (rs.next())
+                return true;
         } catch (SQLException | ClassNotFoundException e /*| UserNotFoundException e*/) {
             System.err.println(e.getMessage());
         }
-        User customer = new Customer("dummy", "ondsbolle@idiot.nu", "fuck");
-        return customer;
+        return false;
+    }
 
+    //TODO - OVerrride notian problem
+    public String getNameFromDB(String email) {
+        String name = null;
+        sqlstatement = "SELECT users.name FROM cupcakedb.users WHERE users.email = ?;";
+        try (Connection conn = getConnection()) {
+            PreparedStatement ps = conn.prepareStatement(sqlstatement);
+            ps.setString(1, email);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()){
+                name = rs.getString("name");
+            };
+        } catch (SQLException | ClassNotFoundException e /*| UserNotFoundException e*/) {
+            System.err.println(e.getMessage());
+        }
+        return name;
     }
 
     public void registerUserInDB(User user){
@@ -146,11 +197,12 @@ public class Database implements OrderRepository, CupCakeRepository, UserReposit
             ps.setBoolean(2,user.getCustommerRole());
             ps.setString(3,user.getEmail());
             ps.setString(4, user.getPassword());
-
+            ps.execute();
 
         } catch (SQLException | ClassNotFoundException e /*| UserNotFoundException e*/) {
             System.err.println(e.getMessage());
         }
     }
+
 
 }

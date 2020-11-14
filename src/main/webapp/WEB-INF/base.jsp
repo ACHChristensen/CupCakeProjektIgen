@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Cahtrine
+  User: Cathrine
   Date: 05-11-2020
   Time: 12:03
 
@@ -35,48 +35,48 @@
 
     <title>${requestScope.title}</title>
 </head>
-<body data-new-gr-c-s-check-loaded="14.983.0" ;>
+<body data-new-gr-c-s-check-loaded="14.983.0">
 <!--navbar-->
-    <jsp:include page="navbar.jsp" flush="true"/>
+<jsp:include page="navbar.jsp" flush="true"/>
 
 <main role="main" class="container">
 
     <jsp:include page="${requestScope.content}" flush="true"/>
 
-        <div class="container ">
+    <div class="container ">
 
-        </div>
+    </div>
 </main>
-    <footer class="footer">
-        <div class="container">
-            <br>
-            <div class="row">
-                <div class="col-sm">
-                    <div class="col-md-3">
-                    <img class="imginfooter" class="mb-3" src="<c:url value="img/img.png"/>" alt="..." width="300%">
-                    </div>
+<footer class="footer">
+    <div class="container">
+        <br>
+        <div class="row">
+            <div class="col-sm">
+                <div class="col-md-3">
+                    <img class="imginfooter" class="mb-3" src="<c:url value="img/img.png"/>"  width="300%">
                 </div>
-                <div class="col-sm">
-                    <div class="text-white" >
-                        <h5 class="mb-4 mt-3">Åbningstider</h5>
-                        <ul class="list-unstyled">
-                            <li class="mb-2">
-                                <h6 class="mb-1"><a class="reset-anchor text-primary">Mandag til
-                                    fredag</a></h6>
-                                <p class=" text-small text-fancy mb-0">Kl. 08:00 - 17.00</p>
-                            </li>
-                            <li class="mb-2">
-                                <h6 class="mb-1"><a class="reset-anchor text-primary">Lørdage</a></h6>
-                                <p class=" text-small text-fancy mb-0">Kl. 10:00 - 14:00</p>
-                            </li>
-                            <li class="mb-3">
-                                <h6 class="mb-1"><a class="reset-anchor text-primary">Søndage og helligdage</a></h6>
-                                <p class=" text-small text-fancy mb-0">Lukket</p>
-                            </li>
-                        </ul>
-                    </div>>
-                    </div>
-                <div class="col-sm">
+            </div>
+            <div class="col-sm">
+                <div class="text-white">
+                    <h5 class="mb-4 mt-3">Åbningstider</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <h6 class="mb-1"><a class="reset-anchor text-primary">Mandag til
+                                fredag</a></h6>
+                            <p class=" text-small text-fancy mb-0">Kl. 08:00 - 17.00</p>
+                        </li>
+                        <li class="mb-2">
+                            <h6 class="mb-1"><a class="reset-anchor text-primary">Lørdage</a></h6>
+                            <p class=" text-small text-fancy mb-0">Kl. 10:00 - 14:00</p>
+                        </li>
+                        <li class="mb-3">
+                            <h6 class="mb-1"><a class="reset-anchor text-primary">Søndage og helligdage</a></h6>
+                            <p class=" text-small text-fancy mb-0">Lukket</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm">
 
                 <div class="text-white" class="col-md-4 col-sm-12">
                     <h5 class="mb-4 mt-3">Her arbejder vi</h5>
@@ -86,15 +86,12 @@
                             width="350vw" height="50%" frameborder="0" style="border:0;" allowfullscreen="true"
                             aria-hidden=
                                     "false" tabindex="0"></iframe>
-                    <h7 class="text-white"> Denne hjemmeside er version ${sessionScope.version}.00</h7>
+                    <h7 class="text-white"> Denne hjemmeside er version ${version}.00</h7>
                 </div>
             </div>
         </div>
-            </div>
-        </div>
-    </footer>
+    </div>
+</footer>
 
 </body>
 </html>
-
-<!-- sweet pink color: rgb(219,115,149)-->

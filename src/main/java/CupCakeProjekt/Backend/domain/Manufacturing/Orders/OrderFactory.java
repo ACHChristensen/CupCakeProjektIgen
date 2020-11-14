@@ -6,7 +6,7 @@ public interface OrderFactory {
 
 
     static OrderLine addAsOrderLine(CupCake cupCake, int quanitity) {
-        return null;
+        return new OrderLine(cupCake,quanitity);
     }
 
 }

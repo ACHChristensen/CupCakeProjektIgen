@@ -5,8 +5,8 @@ import CupCakeProjekt.Backend.domain.Manufacturing.Users.User;
 
 public interface UserRepository /*extends UserFactory*/ {
 
-    static User createUser(String name, String email, String password) {
-        return null;
+    static Customer createNewCustomer(String name, String email, String password) {
+        return new Customer(name, email,password);
     }
 
     static Customer registerCustomer(User user){

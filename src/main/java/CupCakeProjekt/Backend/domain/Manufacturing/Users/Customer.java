@@ -8,20 +8,23 @@ public class Customer extends User{
     //TODO
     private List<Order> orderHistory;
 
-    private String name;
-    private String password;
-    private String email;
-
     public Customer(String name, String email, String password) {
         super(name, true, password, email);
     }
 
     public void setName(String name) {
-        this.name = name;
+        super.setName(name);
     }
 
     @Override
     public String getPassword() {
-        return password;
+        return super.getPassword();
+    }
+
+    @Override
+    public String toString() {
+        return "Customer: " +
+                "Navn ='" + super.getName() + '\'' +
+                ", email ='" + super.getEmail() + '\'';
     }
 }

@@ -15,14 +15,20 @@ public class Navbar {
             "Index", "/",
             "Login", "/login",
             "About", "/About",
-            "Contact", "/contact",
+            "Contact", "/Contact",
             "Cart", "/ShoppingCart",
-            "CupCakes", "/cupcakes",
-            "User", "/user"
+            "Cupcakes", "/Cupcakes",
+            "User", "/User",
+            "Register","/register",
+            "Logout", "/logout",
+            "Reconstruction", "/Reconstruction"
     );
 
     public String findUrl(String name) {
-        System.out.println("HER ER VI :"+ SITES.get(name) + " " + name);
         return req.getContextPath() + SITES.get(name);
+    }
+
+    public static Map<String, String> getSITES() {
+        return SITES;
     }
 }

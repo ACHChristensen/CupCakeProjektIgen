@@ -1,3 +1,4 @@
+
 <%--
   Created by IntelliJ IDEA.
   User: Cathrine
@@ -5,16 +6,19 @@
   Time: 00:58
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<form name="login" action="${sessionScope.content}" method="post">
-    <input type="hidden" name="target" value="login"/>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<div class="text-center">
+<textcentercatversion>Login</textcentercatversion>
+</div>
+<form name="login" action="${Login}" method="Post">
+    <input class="form-control border-light rounded-0" type="hidden" name="target" value="login">
 
     <div class="form-group">
-        <label for="email">Indtast din email:</label>
-        <input type="text" name="email" class="form-control tr2" id="email" aria-describedby="emailHelp" placeholder="Skriv e-mail her">
+        <input type="text" name="email1" class="form-control tr2" id="email" aria-describedby="emailHelp" placeholder="Skriv e-mail her">
     </div>
+
     <div class="form-group">
-        <label for="password">Indtast dit kodeord:</label>
-        <input type="password" name="password" class="form-control tr2" id="password" placeholder="Skriv kodeord her">
+        <input type="password" name="password1" class="form-control tr2" id="password" placeholder="Skriv kodeord her">
     </div>
 
     <div class="text-center">
@@ -23,7 +27,7 @@
 </form>
 
 <%--<div class="input-group">
-    <input class="form-control border-dark text-white rounded-0" type="search"
+    <input  type="search"
            placeholder="Indtast din e-mail her" aria-label="mail"
            aria-describedby="button-addon2">
     <input class="form-control border-dark text-white rounded-0" type="search"

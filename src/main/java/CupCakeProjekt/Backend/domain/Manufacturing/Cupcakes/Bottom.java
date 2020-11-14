@@ -14,8 +14,12 @@ public class Bottom {
         return price;
     }
 
+    public String getFlavor() {
+        return flavor;
+    }
+
     @Override
     public String toString() {
-        return "Bund med smag: "+ flavor + " : "+ price + " kr.";
+        return flavor;
     }
 }

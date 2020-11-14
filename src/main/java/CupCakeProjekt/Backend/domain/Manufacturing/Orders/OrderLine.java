@@ -7,23 +7,30 @@ public class OrderLine {
     private final CupCake cupCake;
     private final int quanitity;
     private double price;
-    private final String orderedTime;
-    private String pickUpTime;
     // TODO private boolean pickedUp;
 
     public OrderLine(CupCake cupCake, int quanitity) {
         this.cupCake = cupCake;
         this.quanitity = quanitity;
-        this.orderedTime = nowOrderedTime();
+        price = getPrice();
     }
 
     public double getPrice(){
-        price = cupCake.getPrice()*quanitity;
-        return price;
+        double pricetmp = cupCake.getPrice()*quanitity;
+        return pricetmp;
     }
 
-    public String nowOrderedTime() {
-        //TODO
-        return "";
+    public int getQuanitity() {
+        return quanitity;
+    }
+
+    public CupCake getCupCake() {
+        return cupCake;
+    }
+
+    @Override
+    public String toString() {
+        return cupCake + " x " + quanitity + " stk"+
+                "\n\t\t\t\tpris = " + price + "kr.\n";
     }
 }
