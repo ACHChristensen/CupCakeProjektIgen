@@ -15,7 +15,7 @@ public class Index extends BaseServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws
             ServletException, IOException {
 
-        req.setAttribute("version", ""+ Database.versionItSHouldBe);
+        req.getServletContext().setAttribute("version", ""+ Database.versionItSHouldBe);
 
         render("Olsker Cupcakes","/WEB-INF/index.jsp", req,resp);
 

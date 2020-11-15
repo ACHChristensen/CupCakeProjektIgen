@@ -1,0 +1,42 @@
+@startuml
+
+title Domæne model
+
+
+class Customer{
++ Email
++ Password
+}
+class Employee{
++ Email
++ Password
+}
+class Topping{
++ flavor
++ price
+}
+class Bottom{
++ flavor
++ price
+}
+class Cupcake
+class Orderline{
++quantity
+}
+class Order{
++ Price
+}
+class Cart
+Topping==Cupcake
+Bottom==Cupcake
+Cupcake==Orderline
+Orderline==Cart
+Cart==Order
+Order==Customer
+Order==Employee
+Customer==Employee
+Customer==Cart
+
+
+
+@enduml
